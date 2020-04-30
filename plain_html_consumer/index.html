@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewprot" content="width=eevice-width, initial-scale=1.0">
+    <title>Web Compoenents - Plain HTML und JS Consumer</title>
+</head>
+
+<body>
+    <h1>Web Compoenents - Plain HTML und JS Consumer</h1>
+
+    <auto-complete values="HP,Apple,Lenovo"></auto-complete>
+
+    <script src="autocomplete.js"></script>
+
+    <script>
+        const input = document.querySelector("auto-complete");
+
+        input.addEventListener('nameChange', (ev) => {
+            console.log('event bubble: ', ev.detail);
+        })
+    </script>
+
+</body>
+<html

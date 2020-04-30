@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewprot" content="width=eevice-width, initial-scale=1.0">
+    <title>Web Compoenents - VueJS Consumer</title>
+</head>
+
+<body>
+    <h1>Web Compoenents - VueJS Consumer</h1>
+
+    <main id="app">
+        Selected: {{selected}}
+        <auto-complete v-bind:values=values v-on:namechange="onNameChange($event)">
+        </auto-complete>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="autocomplete.js"></script>
+
+    <script type="text/javascript">
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                values: ['Apple', 'HP', 'Lenovo'],
+                selected: "-"
+            },
+            methods: {
+                onNameChange: function (event) {
+                    alert('Hello ' + this.name + '!')
+                    // `event` is the native DOM event
+                    if (event) {
+                        alert(event.target.tagName)
+                    }
+
+                    this.selected = event.target
+                }
+            }
+        });
+    </script>
+</body>
+<html
